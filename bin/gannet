@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var gannet = require('../lib/gannet');
+var ArgumentParser = require('./argparse').ArgumentParser;
+
+var settings = new gannet.Settings();
+var use_server = false;
+
+var parser = new ArgumentParser();
+parser.add_argument('--settings', {
+  'help': "settings file to use",
+  'action': function ( value ) {
+    // read a settings file
+    settings = new gannet.Settings( value );
+  }
+});
+parser.add_argument('--server', {
+  'help': "start a test server",
+  'action': function ( value ) {
+    use_server = true;
+  }
+});
+parser.parse_args();
+
+
+
+try {
+  settings.meet_requirements();
+  var site = new gannet.Site( settings ).process();
+}
+catch ( err ) {
+  ;;;console.error( 'Error:', err.message );
+  use_server = false;
+}
+
+
+// if requested, then start a server
+if ( use_server ) {
+  new gannet.Server( site, ':8888');
+}
