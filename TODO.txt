@@ -1,0 +1,25 @@
+Still to-do:
+
+  write documentation
+  comment main files
+  add support for textile format
+  add support for html format
+  
+  parse "collections" settings: e.g. DATE_FORMATS
+
+  generate RSS / ATOM feeds for all content groups
+
+  enforce SITE_URL setting (required for feeds)
+
+  support pagination (via generators)
+
+  content groups for all languages (essentially lang based archives)
+
+  preload templates and only render items for existing templates
+  only render things that have URLs (aka. allow skipping feeds/cats)
+
+  only render things that have actually changed
+
+  support post drafts :-)
+
+  sitemap.xml

@@ -5,6 +5,7 @@ var ArgumentParser = require('./argparse').ArgumentParser;
 
 var settings = new gannet.Settings();
 var use_server = false;
+var debugging = true;
 
 var parser = new ArgumentParser();
 parser.add_argument('--settings', {
@@ -23,14 +24,19 @@ parser.add_argument('--server', {
 parser.parse_args();
 
 
-
-try {
+if ( debugging ) {
   settings.meet_requirements();
   var site = new gannet.Site( settings ).process();
 }
-catch ( err ) {
-  ;;;console.error( 'Error:', err.message );
-  use_server = false;
+else {
+  try {
+    settings.meet_requirements();
+    var site = new gannet.Site( settings ).process();
+  }
+  catch ( err ) {
+    ;;;console.error( 'Error:', err.message );
+    use_server = false;
+  }
 }
 
 
