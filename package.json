@@ -17,7 +17,7 @@
   "keywords": [ "blog", "markdown", "textile", "html" ],
   "tags": [ "blog", "markdown", "textile", "html" ],
   "dependencies": {
-    "swig": "*",
+    "swig": "0.8.0",
     "dateutil": "*",
     "marked": "*",
     "textile-js": "*"
