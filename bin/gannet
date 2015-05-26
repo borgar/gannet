@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var gannet = require('../lib/gannet');
-var ArgumentParser = require('./argparse').ArgumentParser;
+var ArgumentParser = require('../lib/mod/argparse').ArgumentParser;
 
 var settings = new gannet.Settings();
 var use_server = false;
