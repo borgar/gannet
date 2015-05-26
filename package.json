@@ -2,7 +2,7 @@
   "name": "gannet",
   "description": "A static blog generator inspired by Jekyl and Pelican.",
   "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./lib/gannet.js",
   "bin": {
     "gannet": "./bin/gannet"
@@ -14,11 +14,12 @@
   "bugs" : {
     "url": "http://github.com/borgar/node-gannet/issues"
   },
-  "keywords": [ "blog", "markdown", "html" ],
-  "tags": [ "blog", "markdown", "html" ],
+  "keywords": [ "blog", "markdown", "textile", "html" ],
+  "tags": [ "blog", "markdown", "textile", "html" ],
   "dependencies": {
-    "dust": "*",
+    "swig": "*",
     "dateutil": "*",
-    "marked": "*"
+    "marked": "*",
+    "textile-js": "*"
   }
 }

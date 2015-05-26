@@ -1,0 +1,25 @@
+Still to-do:
+	- Encapsulated things need slugs for urls (or do they?)
+	- Switch to a non-homemade arguments parser
+	- See if there is an NPM module now to handle the unicode decomposition
+	- What happens when two tags serialize to same slug string? -> can filename be org name?
+	- Write some documentation (hah, as if!)
+		- Add an example site or two
+	- Markdown: Marked does not support footnotes syntax (temp hack in place)
+	- Add support for Textile content format
+	- Add support for HTML content format
+	- Generate RSS/ATOM feeds for all content groups
+	- Add a setting to control for "absolute" or "relative" url output
+	- Support pagination of content groups
+	- Content groups for languages (essentially lang based archives)
+	- Finish support for categories
+	- Finish support for authors (profiles)
+	- Only render items that have templates (partially done)
+	- Only render things that have URLs (aka. allow skipping feeds/cats)
+	- Clean up orphaned files in generated site (if setting)
+	- Only write files that have updated since last run @done
+		- Provide a setting to force full write
+		- Force a full write when settings file is updated
+	- Write a sitemap.xml (partially done)
+	- Automatic robots.txt?
+	- Only publish things from within past and present (no future dates)
