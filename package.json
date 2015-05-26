@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/borgar/node-gannet.git"
+    "url": "git://github.com/borgar/gannet.git"
   },
   "bugs" : {
-    "url": "http://github.com/borgar/node-gannet/issues"
+    "url": "http://github.com/borgar/gannet/issues"
   },
   "keywords": [ "blog", "markdown", "textile", "html" ],
   "tags": [ "blog", "markdown", "textile", "html" ],
