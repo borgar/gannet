@@ -7,8 +7,6 @@ Still to-do:
 	- Write some documentation (hah, as if!)
 		- Add an example site or two
 	- Markdown: Marked does not support footnotes syntax (temp hack in place)
-	- Add support for Textile content format
-	- Add support for HTML content format
 	- Generate RSS/ATOM feeds for all content groups
 	- Add a setting to control for "absolute" or "relative" url output
 	- Support pagination of content groups
