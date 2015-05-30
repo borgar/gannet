@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}{{ SITE_TITLE }}{% endblock %}
+{% block bodyclass %}home list{% endblock %}
+
+{% block content %}
+{% import "macros.html" as make %}
+
+{% for post in index.items %}
+  {% if forloop.first %}
+  {{ make.display(post) }}
+<hr class="aux">
+<div class="post-list">
+  <ul>
+  {% else %}
+    {{ make.listitem(post) }}
+  {% endif %}
+    {# <h2 id="dated-{{ year }}">{{ year }}</h2> #}
+{% if forloop.last %}
+  </ul>
+</div>
+  {% endif %}
+{% endfor %}
+{% if index.items.length == 0 %}
+<p>No posts were found</p>
+{% endif %}
+
+{% endblock %}

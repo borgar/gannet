@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}Archives{% endblock %}
+{% block bodyclass %}list{% endblock %}
+
+{% block content %}
+{% import "macros.html" as make %}
+{% if tag.items.length %}
+  <div class="post-list">
+  <h1>Posts tagged <a href="{{ tag.url }}" rel="tag">{{ tag }}</a></h1>
+  {{ make.list(tag.items) }}
+  </div>
+{% else %}
+  <h1>Posts tagged <a href="{{ tag.url }}" rel="tag">{{ tag }}</a></h1>
+  <p>No posts were found</p>
+{% endif %}
+
+{% endblock %}

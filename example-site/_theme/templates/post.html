@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}{{ post.title }}{% endblock %}
+{% block bodyclass %}single{% endblock %}
+
+{% block content %}
+
+{% import "macros.html" as make %}
+{{ make.display( post, true ) }}
+
+{% if post.in_default_lang %}
+<nav id="pager">
+  {% if post.next %}<a rel="next" href="{{ post.next.url }}" title="{{ post.next.title }}">Newer entry <i>&rarr;</i></a>{% endif %}
+  {% if post.prev %}<a rel="prev" href="{{ post.prev.url }}" title="{{ post.prev.title }}"><i>&larr;</i> Older entry</a>{% endif %}
+</nav>
+{% else %}  
+<nav id="pager">
+  {% if post.next_in_lang %}<a rel="next" href="{{ post.next_in_lang.url }}" title="{{ post.next_in_lang.title }}">Newer in {{ post.lang.title }} <i>&rarr;</i></a>{% endif %}
+  {% if post.prev_in_lang %}<a rel="prev" href="{{ post.prev_in_lang.url }}" title="{{ post.prev_in_lang.title }}"><i>&larr;</i> Older in {{ post.lang.title }}</a>{% endif %}
+</nav>
+{% endif %}
+
+{% endblock %}

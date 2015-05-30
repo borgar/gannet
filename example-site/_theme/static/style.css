@@ -1,0 +1,189 @@
+/* this css file is used when javascript is not present */
+
+body {
+  font-size: 14px;
+  line-height: 1.3;
+  font-family: sans-serif;
+  margin: 0;
+  background: #eee url(roughcloth.png) 0 0 repeat;
+}
+#top {
+  margin: 20px auto;
+  width: 40em;
+  position: relative;
+}
+.print { display: none; }
+.aux { position:absolute;right:9999em;left:auto; }
+
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+a {
+  color: #335;
+  text-decoration: none;
+}
+a:hover,
+a:target,
+a:focus {
+  color: #383;
+  text-decoration: underline;
+}
+a:visited {
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  height: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #aaa;
+}
+td, th {
+  padding: .2em .4em;
+  border: 1px solid #aaa;
+  text-align: left;
+}
+td[align], th[align] {
+  text-align: attr(align);
+}
+
+code {
+  background: #eee;
+  font-size: 13px;
+}
+pre > code {
+  display: inline-block;
+}
+
+header {
+  background: #eee;
+  padding: .5em 1em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 3em;
+
+  border : 1px solid #bbb;
+  background: #eeeeee; /* Old browsers */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(164, 174, 186, 0.5) 100%);
+
+
+}
+header h1 {
+  font-size: 20px;
+  margin: 0;
+  border-bottom: 0;
+}
+header h1 a {
+  color: #000;
+}
+
+
+#main {
+  padding: 0 1em;
+}
+
+
+p.date { position:absolute;right:9999em;left:auto; }
+
+article {
+  margin-bottom: 5em;
+}
+article img {
+  float: right;
+  margin: 0 0 .8em 1em;
+}
+article h1 + img {
+  margin-top: 1em;
+}
+
+section.meta {
+  border-top: 1px solid #ccc;
+  margin-top: 1.2em;
+  padding-top: .2em;
+}
+
+a[rel=tag]:before {
+  content: '#';
+}
+
+#pager {
+  margin-bottom: 5em;
+  overflow: hidden;
+}
+#pager [rel=prev] {
+  float: left;
+}
+#pager [rel=next] {
+  float: right;
+}
+
+#pages {
+  position: absolute;
+  top: .8em;
+  right: 1em;
+}
+#pages ul { padding: 0; margin: 0; list-style: none; }
+#pages li { display: inline-block; margin-left: 1em; }
+#pages h1 { position:absolute;right:9999em;left:auto; }
+
+
+#license {
+  margin: 4em 1em;
+  font-size: .9em;
+  line-height: 1.2;
+}
+#license img {
+  float: left;
+  margin-right: 1em;
+}
+
+
+#lang {
+  background: #eee;
+  padding: .5em 0;
+  margin: 4em 1em;
+  list-style: none;
+  text-align: center;
+  font-size: .9em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#lang li { display: inline; padding: 0 .5em; }
+
+
+.post-list ul {
+  list-style: none;
+  display : block;
+  margin : 0;
+  padding : 0;
+  border-bottom : 1px solid #ccc;
+}
+.post-list li {
+  padding : 1em;
+  border-top : 1px solid #ccc;
+}
+.post-list li h3 {
+  margin : 0;
+}
+.post-list em {
+  font-style: normal;
+  font-size: 13px;
+  color: #666;
+}
+
+
+#disclaimer {
+  font-size: 11px;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  text-align: center;
+}

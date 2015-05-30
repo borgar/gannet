@@ -1,0 +1,20 @@
+{% set year = -1 %}
+{% set month = -1 %}
+{% for post in posts %}
+{% if year != post.year %}
+{% if year != -1 %}</ul>{% endif %}
+<h2 id="dated-{{ post.year }}">{{ post.year }}</h2>
+<ul>
+{% endif %}
+  <li id="dated-{{ post.year }}-{{ post.month }}-{{ post.day }}">
+    <em>{{ post.locale_date }}</em>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+  </li>
+{% set year = post.year %}{% set month = post.month %}
+{% if loop.last %}</ul>{% endif %}
+{% endfor %}
+{% if posts.length == 0 %}
+<p>No posts were found</p>
+{% endif %}
+
+
