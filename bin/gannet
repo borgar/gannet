@@ -6,6 +6,7 @@ var ArgumentParser = require('../lib/mod/argparse').ArgumentParser;
 var settings = new gannet.Settings();
 var use_server = false;
 var verbose = false;
+var force_write = false;
 var debugging = true;
 
 var parser = new ArgumentParser();
@@ -22,6 +23,12 @@ parser.add_argument('--server', {
     use_server = true;
   }
 });
+parser.add_argument('--force', {
+  'help': "don't check file dates, just write everything out",
+  'action': function ( value ) {
+    force_write = true;
+  }
+});
 parser.add_argument('--verbose', {
   'help': "report what is happening to console",
   'action': function ( value ) {
@@ -33,12 +40,12 @@ parser.parse_args();
 
 if ( debugging ) {
   settings.meet_requirements();
-  var site = new gannet.Site( settings, verbose ).process();
+  var site = new gannet.Site( settings, verbose, !force_write ).process();
 }
 else {
   try {
     settings.meet_requirements();
-    var site = new gannet.Site( settings, verbose ).process();
+    var site = new gannet.Site( settings, verbose, !force_write ).process();
   }
   catch ( err ) {
     ;;;console.error( 'Error:', err.message );
