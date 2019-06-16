@@ -1,0 +1,11 @@
+{
+  extends: [ '@borgar/eslint-config' ],
+  rules: {
+    'import/no-unresolved': 'error',
+    'no-console': 'off'
+  },
+  parserOptions: { ecmaVersion: 2018 },
+  plugins: [ 'import' ],
+  globals: { Set, Promise, Symbol },
+  env: { node: true }
+}

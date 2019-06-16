@@ -1,60 +1,90 @@
 #!/usr/bin/env node
+const { Settings, Server, Site } = require('../lib/gannet');
+const { ArgumentParser } = require('../lib/mod/argparse');
 
-var gannet = require('../lib/gannet');
-var ArgumentParser = require('../lib/mod/argparse').ArgumentParser;
+let settings = new Settings();
+const parser = new ArgumentParser();
+const debugging = true;
 
-var settings = new gannet.Settings();
-var use_server = false;
-var verbose = false;
-var force_write = false;
-var debugging = true;
+let site;
+let use_server = false;
+let verbose = false;
+let force_write = false;
 
-var parser = new ArgumentParser();
 parser.add_argument('--settings', {
-  'help': "settings file to use",
-  'action': function ( value ) {
+  help: 'settings file to use',
+  action: function (value) {
     // read a settings file
-    settings = new gannet.Settings( value );
+    settings = new Settings(value);
   }
 });
 parser.add_argument('--server', {
-  'help': "start a test server",
-  'action': function ( value ) {
+  help: 'start a test server',
+  action: function (value) {
     use_server = true;
   }
 });
 parser.add_argument('--force', {
-  'help': "don't check file dates, just write everything out",
-  'action': function ( value ) {
+  help: "don't check file dates, just write everything out",
+  action: function (value) {
     force_write = true;
   }
 });
 parser.add_argument('--verbose', {
-  'help': "report what is happening to console",
-  'action': function ( value ) {
+  help: 'report what is happening to console',
+  action: function (value) {
     verbose = true;
   }
 });
 parser.parse_args();
 
 
-if ( debugging ) {
+if (debugging) {
   settings.meet_requirements();
-  var site = new gannet.Site( settings, verbose, !force_write ).process();
+  site = new Site(settings, verbose, false);
+  site.process();
 }
 else {
   try {
     settings.meet_requirements();
-    var site = new gannet.Site( settings, verbose, !force_write ).process();
+    site = new Site(settings, verbose, !force_write);
+    site.process();
   }
-  catch ( err ) {
-    ;;;console.error( 'Error:', err.message );
+  catch (err) {
+    console.error('Error:', err.message);
     use_server = false;
   }
 }
 
 
 // if requested, then start a server
-if ( use_server ) {
-  new gannet.Server( site, ':8888');
+if (use_server) {
+  // eslint-disable-next-line
+  new Server(site, ':8888');
+
+  const fs = require('fs');
+  const sw = site.smart_writes;
+
+  const postDir = site.resolve_path_setting('SOURCE_PATH', true);
+  fs.watch(postDir, { recursive: true }, (eventType, filename) => {
+    if (eventType === 'change') {
+      site.process();
+    }
+    else {
+      console.log(eventType, filename);
+    }
+  });
+
+  const themeDir = site.resolve_path_setting('THEME_PATH', true);
+  fs.watch(themeDir, { recursive: true }, (eventType, filename) => {
+    if (eventType === 'change') {
+      site.smart_writes = false;
+      site.process();
+      site.smart_writes = sw;
+    }
+    else {
+      console.log(eventType, filename);
+    }
+  });
+
 }

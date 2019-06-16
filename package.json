@@ -2,8 +2,11 @@
   "name": "gannet",
   "description": "A static blog generator inspired by Jekyl and Pelican.",
   "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "./lib/gannet.js",
+  "scripts": {
+    "lint": "eslint lib"
+  },
   "bin": {
     "gannet": "./bin/gannet"
   },
@@ -11,15 +14,32 @@
     "type": "git",
     "url": "git://github.com/borgar/gannet.git"
   },
-  "bugs" : {
+  "bugs": {
     "url": "http://github.com/borgar/gannet/issues"
   },
-  "keywords": [ "blog", "markdown", "textile", "html" ],
-  "tags": [ "blog", "markdown", "textile", "html" ],
+  "keywords": [
+    "blog",
+    "markdown",
+    "textile",
+    "html"
+  ],
+  "tags": [
+    "blog",
+    "markdown",
+    "textile",
+    "html"
+  ],
   "dependencies": {
-    "swig": "0.8.0",
     "dateutil": "*",
-    "marked": "*",
+    "marked": "~0.6.2",
+    "nunjucks": "~3.2.0",
     "textile-js": "*"
+  },
+  "devDependencies": {
+    "@borgar/eslint-config": "~1.0.3",
+    "eslint": "~5.16.0",
+    "eslint-plugin-import": "~2.17.1",
+    "tap-difflet": "~0.7.1",
+    "tape": "~4.10.1"
   }
 }
