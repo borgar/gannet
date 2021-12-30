@@ -1,4 +1,4 @@
-Title: About this blog
+Title: About this site
 Slug: about
 Date: 2014-01-10 00:00:00
 Lang: en

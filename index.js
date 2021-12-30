@@ -1,1 +1,2 @@
-module.exports = require('./lib/gannet');
+import gannet from './lib/gannet';
+export default gannet;

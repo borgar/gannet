@@ -3,9 +3,11 @@
   "description": "A static blog generator inspired by Jekyl and Pelican.",
   "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
   "version": "2.1.0",
+  "type": "module",
   "main": "./lib/gannet.js",
   "scripts": {
-    "lint": "eslint lib"
+    "lint": "eslint lib",
+    "test": "tape lib/*-test.js|tap-min"
   },
   "bin": {
     "gannet": "./bin/gannet"
@@ -30,16 +32,19 @@
     "html"
   ],
   "dependencies": {
+    "@babel/eslint-parser": "~7.16.5",
     "dateutil": "*",
-    "marked": "~0.6.2",
-    "nunjucks": "~3.2.0",
-    "textile-js": "*"
+    "marked": "~4.0.8",
+    "nodemon": "~2.0.15",
+    "nunjucks": "~3.2.3",
+    "tap-min": "~2.0.0",
+    "textile-js": "~2.1.1"
   },
   "devDependencies": {
-    "@borgar/eslint-config": "~1.0.3",
-    "eslint": "~5.16.0",
-    "eslint-plugin-import": "~2.17.1",
-    "tap-difflet": "~0.7.1",
-    "tape": "~4.10.1"
+    "@borgar/eslint-config": "~2.2.1",
+    "eslint": "~8.5.0",
+    "eslint-plugin-import": "~2.25.3",
+    "tape": "~5.4.0",
+    "ws": "~8.4.0"
   }
 }

@@ -1,1 +1,24 @@
-AUTHORS OVERVIEW
+{% extends "base.html" %}
+
+{% block pagetitle %}Authors{% endblock %}
+{% block bodyclass %}list{% endblock %}
+
+{% block content %}
+{% import "macros.html" as make %}
+<div class="post-list">
+  <h1>Authors</h1>
+
+  {% if authors.items.length %}
+  <ul>
+    {% for author in authors.items %}
+    <li>
+      <h2><a rel="author" href="{{ author.url }}">{{ author }}</a></h2>
+      <p>{{ author.content }}</p>
+    </li>
+    {% endfor %}
+  </p>
+  {% else %}
+    <p>No posts were found.</p>
+  {% endif %}
+</div>
+{% endblock %}

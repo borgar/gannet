@@ -7,7 +7,7 @@
 {% import "macros.html" as make %}
 
 {% for post in index.items %}
-  {% if forloop.first %}
+  {% if loop.first %}
   {{ make.display(post) }}
 <hr class="aux">
 <div class="post-list">
@@ -16,7 +16,7 @@
     {{ make.listitem(post) }}
   {% endif %}
     {# <h2 id="dated-{{ year }}">{{ year }}</h2> #}
-{% if forloop.last %}
+{% if loop.last %}
   </ul>
 </div>
   {% endif %}

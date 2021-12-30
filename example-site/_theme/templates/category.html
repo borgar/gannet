@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}{{ category }}{% endblock %}
+{% block bodyclass %}list{% endblock %}
+
+{% block content %}
+{% import "macros.html" as make %}
+{% if category.items.length %}
+  <div class="post-list">
+  <h1>Posts categorized as <a href="{{ category.url }}" rel="tag">{{ category }}</a></h1>
+  {{ make.list(category.items) }}
+  </div>
+{% else %}
+  <h1>Posts categorized as <a href="{{ category.url }}" rel="tag">{{ category }}</a></h1>
+  <p>No posts were found</p>
+{% endif %}
+
+{% endblock %}

@@ -3,6 +3,8 @@ Slug: aliquam-ridiculus
 Date: 2015-02-01 11:05:03
 Lang: en
 Tags: dummy, textile
+Author: Alex, Steve
+Category: cat1, cat2
 
 !/files/nature-q-c-309-297-9.jpg!
 
