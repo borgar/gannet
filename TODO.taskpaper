@@ -1,4 +1,5 @@
 Still to-do:
+	- Allow pages/posts to exist under PAGE_PATH/POST_PATH vs SOURCE_PATH
 	- A setting for a default author
 	- Tags in feeds are broken
 	- Encapsulated things need slugs for urls (or do they?)
