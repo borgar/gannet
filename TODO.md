@@ -1,20 +1,21 @@
 Still to-do:
+	- Allow pages/posts to exist under PAGE_PATH/POST_PATH vs SOURCE_PATH
+	- A setting for a default author
+	- Tags in feeds are broken
 	- Encapsulated things need slugs for urls (or do they?)
 	- Switch to a non-homemade arguments parser
 	- See if there is an NPM module now to handle the unicode decomposition
 	- What happens when two tags serialize to same slug string? -> can filename be org name?
-	- Update to a modern version of Swig or some other template system
 	- Write some documentation (hah, as if!)
 	- Markdown: Marked does not support footnotes syntax (temp hack in place)
 	- Generate RSS/ATOM feeds for all content groups
 	- Add a setting to control for "absolute" or "relative" url output
 	- Support pagination of content groups
 	- Content groups for languages (essentially lang based archives)
-	- Finish support for categories
-	- Finish support for authors (profiles)
 	- Only render items that have templates (partially done)
 	- Only render things that have URLs (aka. allow skipping feeds/cats)
 	- Clean up orphaned files in generated site (if setting)
 	- Write a sitemap.xml (partially done)
 	- Automatic robots.txt?
+	- drafts?
 	- Only publish things from within past and present (no future dates)

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}Categories{% endblock %}
+{% block bodyclass %}{% endblock %}
+
+{% block content %}
+<div class="post-list">
+  <h1>Complete list of categories used</h1>
+  <p>{% for cat in categories.items %}
+  <a rel="tag" href="{{ cat.url }}">{{ cat }}</a>{% if not loop.last %}<i>,</i>{% endif %}{% endfor %}<i>.</i></p>
+</div>
+{% endblock content %}

@@ -5,8 +5,8 @@
 
 {% block content %}
 <div class="post-list">
-<h1>Complete list of tags used</h1>
-<p>{% for t in tags.items %}
-<a rel="tag" href="{{ t.url }}">{{ t }}</a>{% if not forloop.last %}<i>,</i>{% endif %}{% endfor %}<i>.</i></p>
+  <h1>Complete list of tags used</h1>
+  <p>{% for t in tags.items %}
+  <a rel="tag" href="{{ t.url }}">{{ t }}</a>{% if not loop.last %}<i>,</i>{% endif %}{% endfor %}<i>.</i></p>
 </div>
 {% endblock content %}
