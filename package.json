@@ -2,7 +2,7 @@
   "name": "@borgar/gannet",
   "description": "A static blog generator inspired by Jekyl and Pelican.",
   "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
-  "version": "2.1.0",
+  "version": "3.0.0-rc0",
   "type": "module",
   "main": "./lib/gannet.js",
   "scripts": {
@@ -32,10 +32,8 @@
     "html"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "~7.25.9",
-    "dateutil": "*",
     "marked": "~14.1.3",
-    "nodemon": "~3.1.7",
+    "numfmt": "~3.1.3",
     "nunjucks": "~3.2.4",
     "tap-min": "~3.0.0",
     "textile-js": "~2.1.1"
