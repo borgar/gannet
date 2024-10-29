@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 import fs from 'fs';
 import { Settings, Server, Site } from '../lib/gannet.js';
 import { ArgumentParser } from '../lib/mod/argparse.js';
 
-let settings = new Settings();
+let settings;
 const parser = new ArgumentParser();
-const debugging = true;
+const debugging = false;
 
 let site;
 let use_server = false;
@@ -38,6 +39,22 @@ parser.add_argument('--verbose', {
 });
 parser.parse_args();
 
+if (!settings) {
+  if (fs.existsSync('gannet.ini')) {
+    console.log('Using gannet.ini from current directory');
+    settings = new Settings('gannet.ini');
+  }
+  if (fs.existsSync('gannet.conf')) {
+    console.log('Using gannet.conf from current directory');
+    settings = new Settings('gannet.conf');
+  }
+}
+
+if (!settings) {
+  console.error('Cannot find gannet.ini or --settings directive.');
+  process.exit(1);
+}
+
 if (debugging) {
   settings.meet_requirements();
   site = new Site(settings, verbose, false, !use_server);
@@ -51,7 +68,7 @@ else {
   }
   catch (err) {
     console.error('Error:', err.message);
-    use_server = false;
+    process.exit(1);
   }
 }
 
