@@ -2,7 +2,7 @@
   "name": "@borgar/gannet",
   "description": "A static blog generator inspired by Jekyl and Pelican.",
   "author": "Borgar Þorsteinsson <borgar@borgar.net> (http://borgar.net/)",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "main": "./lib/gannet.js",
   "scripts": {
